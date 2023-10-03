@@ -1,0 +1,46 @@
+<!-- <div class = "combo">
+<nz-form-item class="inline-form-item">
+    <nz-form-control>
+      <nz-select [(ngModel)]="chonTinh">
+        <nz-option nzValue="default" nzLabel="Chọn tỉnh"></nz-option>
+        <nz-option nzValue="HCM" nzLabel="Hồ Chí Minh"></nz-option>
+        <nz-option nzValue="DN" nzLabel="Đà Nẵng"></nz-option>
+        <nz-option nzValue="HN" nzLabel="Hà Nội"></nz-option>
+        <!-- Add more options for option1 as needed 
+      </nz-select>
+    </nz-form-control>
+  </nz-form-item>
+  
+  
+  <nz-form-item class="inline-form-item">
+    <nz-select [(ngModel)]="selectedYear" (ngModelChange)="onYearChange()">
+      <nz-option *ngFor="let year of getAvailableYears()" [nzValue]="year">{{ year }}</nz-option>
+    </nz-select>
+  </nz-form-item>
+  
+  <nz-form-item class="inline-form-item">
+    <nz-form-control>
+      <nz-select [(ngModel)]="tuoiCay">
+        <nz-option nzValue="default" nzLabel="Độ tuổi cây"></nz-option>
+        <nz-option nzValue="1" nzLabel="Dưới 1 năm"></nz-option>
+        <nz-option nzValue="2" nzLabel="2 năm"></nz-option>
+        <nz-option nzValue="3" nzLabel="3 năm"></nz-option>
+        <!-- Add more options for option3 as needed 
+      </nz-select>
+    </nz-form-control>
+  </nz-form-item>
+</div> -->
+
+<!-- year-combo-box.component.html -->
+
+<nz-select
+  [(ngModel)]="selectedYear"
+  (ngModelChange)="onYearChange()"
+  nzAllowClear
+  [nzPlaceHolder]="'Select a year'"
+  nzShowSearch
+  [nzSize]="'default'"
+  [nzDropdownMatchSelectWidth]="false"
+>
+  <nz-option *ngFor="let year of availableYears" [nzValue]="year" [nzLabel]="year"></nz-option>
+</nz-select>

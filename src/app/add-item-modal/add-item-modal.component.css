@@ -1,0 +1,16 @@
+* {
+    box-sizing: border-box;
+}
+button {
+    margin: 5px;
+}
+
+::ng-deep .ant-form-item-label label {
+    display: block;
+    width: 100%;
+}
+
+.user-input{
+    width: 100%;
+    margin: 2px;
+}

@@ -1,0 +1,16 @@
+
+    <nz-upload
+      class="avatar-uploader"
+      nzAction="https://run.mocky.io/v3/2ab9215d-3141-4cfc-b33a-4cc94eaf3944"
+      nzName="avatar"
+      nzListType="picture-card"
+      [nzShowUploadList]="false"
+      [nzBeforeUpload]="beforeUpload"
+      (nzChange)="handleChange($event)"
+    >
+      <ng-container *ngIf="!avatarUrl">
+        <span class="upload-icon" nz-icon [nzType]="loading ? 'loading' : 'plus-circle'"></span>
+        <div class="ant-upload-text">Upload</div>
+      </ng-container>
+      <img *ngIf="avatarUrl" [src]="avatarUrl" style="width: 100%" />
+    </nz-upload>

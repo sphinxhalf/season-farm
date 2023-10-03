@@ -1,0 +1,56 @@
+<div class="year-filter">
+  <nz-select class="combo-box"
+    [(ngModel)]="selectedYear"
+    (ngModelChange)="filterItemsByYear(selectedYear)"
+    [nzPlaceHolder]="'Chọn năm'"
+  >
+    <nz-option
+      *ngFor="let year of years"
+      [nzValue]="year"
+      [nzLabel]="year"
+    ></nz-option>
+  </nz-select>
+</div>
+
+<div class="scroll-container">
+  <div class="custom-grid">
+    <div *ngFor="let month of months">
+      <nz-card [nzTitle]="month" class="column">
+        <div class="column-item">
+        <div class="card-content">
+          <!-- Display items for the selected month -->
+          <ng-container *ngFor="let item of items[month]" class="item-card">
+            <nz-card >
+              <div class="item-content">
+                <!-- Display the image on the left -->
+                <div class="item-image">
+                  <img [src]="item.image" alt="{{ item.name }}" />
+                </div>
+                <!-- Display item details on the right -->
+                <div class="item-details">
+                  <h3>{{ item.name }}</h3>
+                  <div class="item-info">
+                    <nz-tag [nzColor]="'blue'" *ngIf="item.level">{{
+                      item.level
+                    }}</nz-tag>
+                    <nz-tag [nzColor]="'blue'" *ngIf="item.weight">{{
+                      item.weight + ' kg'
+                    }}</nz-tag>
+                    <p>{{ item.dateCreated | date: 'dd/MM/yyyy' }}</p>
+                  </div>
+                </div>
+              </div>
+            </nz-card>
+          </ng-container>
+        </div>
+        <div>
+          <a nz-button nzType="link" (click)="openAddItemModal(month)"
+            >+ Thêm hướng dẫn</a
+          >
+        </div>
+      </div>
+      </nz-card>
+    
+  </div>
+  </div>
+</div>

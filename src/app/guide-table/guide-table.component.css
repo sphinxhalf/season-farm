@@ -1,0 +1,150 @@
+* {
+  box-sizing: border-box;
+}
+
+.year-filter nz-select{
+  margin: 5px;
+  width: 300px;
+}
+
+.scroll-container {
+  overflow-x: auto; /* Enable horizontal scrolling */
+  white-space: nowrap; /* Prevent wrapping of columns */
+  display: flex; /* Use flex display for horizontal layout */
+}
+
+.custom-grid {
+  display: grid; /* Use grid layout for columns */
+  grid-template-columns: repeat(12, 1fr); /* 12 columns, equal width */
+  gap: 8px; /* Adjust the gap between columns as needed */
+  padding: 8px; /* Optional: Add padding for spacing */
+  align-items: start; /* Align columns to the top */
+}
+
+.column {
+  
+  display: flex;
+  flex-direction: column;
+  min-width: 290px; /* Adjust the width as needed */
+  min-height: 100%;
+  box-sizing: border-box;
+  
+}
+
+::ng-deep .column .ant-card-head{
+  color: white;
+  background-color: #3d85c6;
+}
+
+::ng-deep .column .ant-card-body{
+  background-color: #eeeeee;
+  padding: 10px;
+}
+
+.scroll-container .custom-grid nz-card .ant-card-head {
+  background-color: aqua; /* Change the background color of the month title */
+}
+
+
+.card-content {
+  
+  flex-direction: column;
+  flex-grow: 1; /* Allow content to expand */
+  padding: 0px; /* Adjust the padding as needed */
+  width: 100%; 
+  height: 550px;
+
+}
+
+::ng-deep .card-content .ant-card-body{
+  height: 65px;
+  background-color: white;
+  margin: 2px 10px 2px 10px;
+}
+
+::ng-deep .card-content .ant-card {
+  margin: 5px;
+}
+
+.item-image {
+  flex: 1 0 100px; /* Adjust the width as needed */
+  margin-right: 16px; /* Add spacing between image and details */
+}
+
+.item-image img {
+  float: left;
+  margin-right: 10px;
+  max-width: 50px;
+  height: auto;
+}
+
+.item-details {
+  overflow: hidden; 
+  flex: 1;
+  
+}
+
+.item-info {
+  flex: 1;
+  justify-content: space-between;
+  align-items: center;
+}
+
+
+.item-details p {
+  display: inline;
+  flex: 1;
+  margin: 3px;
+  font-size: 10px;
+}
+
+.item-details h3 {
+  font-size: 18px;
+  margin: 0px;
+  padding: 0px;
+}
+
+nz-tag{
+  border-radius: 15px;
+  margin-right: 2px ;
+}
+
+.combobox [placeholder]{
+  font-weight: bold;
+}
+
+/* Define custom scrollbar styles for modern browsers */
+/* For WebKit (Safari, Chrome, etc.) */
+::-webkit-scrollbar {
+  width: 1px; /* Set the width of the scrollbar */
+  height: 5px;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: #888; /* Color of the scrollbar thumb (drag handle) */
+  border-radius: 4px; /* Round the corners of the thumb */
+}
+
+::-webkit-scrollbar-track {
+  background-color: #f1f1f1; /* Color of the scrollbar track (background) */
+}
+
+::ng-deep .ant-modal {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+::ng-deep .ant-modal-content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  
+}
+
+::ng-deep .ant-modal-body {
+  overflow-y: auto; /* Enable vertical scrolling for modal body if needed */
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}

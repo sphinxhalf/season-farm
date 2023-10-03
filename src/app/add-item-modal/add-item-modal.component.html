@@ -1,0 +1,34 @@
+<form nz-form [formGroup]="validateForm" class="modal">
+    
+  <div class="form-item">
+    <nz-form-label >Hình ảnh</nz-form-label>
+    <nz-form-control>
+      <app-upload-image (imageUrlChange)="handleImageUrlSelected($event)" ></app-upload-image>
+    </nz-form-control>
+  </div>
+
+  <div class="form-item">
+    <nz-form-label [nzRequired]="true">Tên</nz-form-label>
+    <nz-form-control>
+      <input class="user-input" nz-input formControlName="name" placeholder="Tên" required />
+    </nz-form-control>
+  </div>
+
+  <div class="form-item">
+    <nz-form-label>Mật độ</nz-form-label>
+    <nz-form-control>
+      <nz-select  class="user-input" formControlName="level" (ngModelChange)="onChangeLevel()" [nzPlaceHolder]="'Chọn mật độ'">
+        <nz-option nzValue="Nhieu" nzLabel="Nhiều"></nz-option>
+        <nz-option nzValue="It" nzLabel="Ít"></nz-option>
+      </nz-select>
+    </nz-form-control>
+  </div>
+
+  <div class="form-item">
+    <nz-form-label >Khối lượng</nz-form-label>
+    <nz-form-control>
+      <textarea rows="2" class="user-input" nz-input formControlName="weight" (ngModelChange)="onChangeWeight()" placeholder="Khối lượng"></textarea>
+      
+    </nz-form-control>
+  </div>
+</form>
